@@ -1,16 +1,16 @@
+import './base.css'
+import SiteHeader from '../components/SiteHeader'
+import SiteFooter from '../components/SiteFooter'
+import DesignInteractions from '../components/DesignInteractions'
+
 export const metadata = {
   title: 'Watertuin Vienna — All You Can Eat & Drink',
   description:
     'All You Can Eat & Drink Restaurant in Wien. Österreichische & asiatische Küche, Live Cooking, Sushi und mehr — alles inklusive, ein Preis.',
 }
 
-// Die Schriften haengen als <link> im Layout, genau wie in der
-// Design-Vorlage. Ueber @import in einer globals.css gingen sie beim
-// Bundling verloren: die kompilierte CSS-Datei kam leer heraus und die
-// Seiten fielen auf die Systemschrift zurueck.
-//
-// Header und Footer stehen im Markup jeder Seite, ebenfalls wie im
-// Entwurf. Das Layout haelt nur die Huelle.
+// Die Schriften haengen als <link>, genau wie in der Design-Vorlage.
+// Ueber @import in einer CSS-Datei gingen sie beim Bundling verloren.
 export default function RootLayout({ children }) {
   return (
     <html lang="de">
@@ -27,7 +27,12 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <DesignInteractions />
+      </body>
     </html>
   )
 }
