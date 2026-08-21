@@ -16,6 +16,10 @@ export default async function Page({ params }) {
     model: 'page',
     apiKey: API_KEY,
     userAttributes: { urlPath },
+    // Builders CDN liefert direkt nach dem Publish noch die alte Fassung.
+    // Ohne cachebust backt ein Rebuild, den der Webhook sofort ausloest,
+    // veralteten Inhalt ein - und nichts stoesst danach einen zweiten an.
+    options: { cachebust: true },
   })
 
   if (!content) notFound()
@@ -31,7 +35,7 @@ export async function generateStaticParams() {
     model: 'page',
     apiKey: API_KEY,
     fields: 'data.url',
-    options: { noTargeting: true },
+    options: { noTargeting: true, cachebust: true },
     limit: 100,
   })
 
