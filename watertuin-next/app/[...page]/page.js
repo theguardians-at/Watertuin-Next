@@ -1,4 +1,5 @@
 import { fetchOneEntry, fetchEntries } from '@builder.io/sdk-react'
+import { notFound } from 'next/navigation'
 import { RenderBuilderContent } from '../../components/builder'
 
 const API_KEY = process.env.NEXT_PUBLIC_BUILDER_API_KEY
@@ -8,13 +9,17 @@ const API_KEY = process.env.NEXT_PUBLIC_BUILDER_API_KEY
 export const revalidate = 60
 
 export default async function Page({ params }) {
-  const urlPath = '/' + (params?.page?.join('/') ?? '')
+  // Ab Next 15 ist params ein Promise und muss abgewartet werden.
+  const { page } = await params
+  const urlPath = '/' + (page?.join('/') ?? '')
 
   const content = await fetchOneEntry({
     model: 'page',
     apiKey: API_KEY,
     userAttributes: { urlPath },
   })
+
+  if (!content) notFound()
 
   return <RenderBuilderContent content={content} model="page" />
 }
