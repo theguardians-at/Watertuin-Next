@@ -1,0 +1,68 @@
+/* ── Watertuin Design System ─────────────────────────────────── */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
+
+:root {
+  --cp:   #2D6A4F;   /* green primary */
+  --cpd:  #1B3A2D;   /* green dark */
+  --cpl:  #52B788;   /* green light */
+  --cpxl: #D8F3DC;   /* green xlight */
+  --cd:   #1A1A1A;   /* text dark */
+  --cb:   #4D3F37;   /* brown */
+  --cm:   #8A7468;   /* medium brown */
+  --ca:   #E8A020;   /* gold/amber */
+  --cbg:  #F7F3EE;   /* cream bg */
+  --cs:   #FDFAF7;   /* soft white */
+  --cbr:  #E2D9CF;   /* border */
+  --cw:   #FFFFFF;
+
+  --ff: 'Satoshi', sans-serif;
+  --fa: 'Nunito Sans', sans-serif;
+
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   16px;
+  --r-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.10);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.14);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff);
+  color: var(--cd);
+  background: var(--cw);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a   { color: inherit; text-decoration: none; }
+
+/* Layout */
+main { min-height: calc(100vh - 72px); }
+
+/* Utility */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--r-full);
+  font-family: var(--ff);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .2s ease;
+  border: none;
+  text-align: center;
+}
+.btn-primary  { background: var(--ca); color: var(--cpd); }
+.btn-primary:hover  { background: #d4911c; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: transparent; color: var(--cw); border: 2px solid var(--cw); }
+.btn-secondary:hover { background: rgba(255,255,255,.1); }
