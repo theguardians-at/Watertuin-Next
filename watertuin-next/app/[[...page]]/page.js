@@ -8,6 +8,27 @@ const API_KEY = process.env.NEXT_PUBLIC_BUILDER_API_KEY
 // veroeffentlichte Aenderungen nie auf der Live-Site.
 export const revalidate = 60
 
+// Titel und Beschreibung liegen am Builder-Eintrag, damit jede Seite
+// ihre eigenen behaelt statt der Vorgabe aus dem Layout.
+export async function generateMetadata({ params }) {
+  const { page } = await params
+  const urlPath = '/' + (page?.join('/') ?? '')
+
+  const content = await fetchOneEntry({
+    model: 'page',
+    apiKey: API_KEY,
+    userAttributes: { urlPath },
+    options: { cachebust: true },
+  })
+
+  const title = content?.data?.metaTitle
+  const description = content?.data?.metaDescription
+  return {
+    ...(title ? { title } : {}),
+    ...(description ? { description } : {}),
+  }
+}
+
 export default async function Page({ params }) {
   const { page } = await params
   const urlPath = '/' + (page?.join('/') ?? '')
