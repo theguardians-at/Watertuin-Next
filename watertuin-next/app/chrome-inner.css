@@ -1,0 +1,20 @@
+/* Der Entwurf gibt Unterseiten eine eigene Kopf-/Fusszeilen-Variante:
+   hoeheres Header-Padding, anderes Footer-Raster, groessere Tagline. */
+.site-header.chrome-inner{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:#1B3A2D;box-shadow:0 1px 0 rgba(255,255,255,.07)}
+.chrome-inner .nav{display:flex;align-items:center;gap:28px}
+.chrome-inner .nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,.65);transition:color .2s}
+.chrome-inner .nav a:hover, .chrome-inner .nav a.active{color:#fff}
+.chrome-inner .btn-reserve{background:var(--ca);color:var(--cd)!important;padding:9px 20px;border-radius:100px;font-weight:700;font-size:13px;transition:background .2s,transform .2s}
+.chrome-inner .btn-reserve:hover{background:#f5b030;transform:translateY(-1px)}
+footer.chrome-inner{background:var(--cd);padding:80px 60px 40px}
+.chrome-inner .footer__grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.08)}
+.chrome-inner .footer__tagline{font-family:var(--fa);font-style:italic;font-size:22px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:-.5px;line-height:1.2;margin-bottom:24px}
+.chrome-inner .footer__social{display:flex;gap:8px;margin-bottom:0}
+.chrome-inner .footer__col-title{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:20px}
+.chrome-inner .footer__links a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}
+.chrome-inner .footer__address{font-size:14px;line-height:1.7;color:rgba(255,255,255,.55)}
+.chrome-inner .footer__address strong{color:rgba(255,255,255,.8);font-weight:500}
+.chrome-inner .footer__bottom{max-width:1100px;margin:24px auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.chrome-inner .footer__legal a{color:rgba(255,255,255,.4);margin-left:20px;transition:color .2s}
+.chrome-inner .footer__legal a:hover{color:rgba(255,255,255,.7)}
+.chrome-inner .hamburger span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s;border-radius:2px}

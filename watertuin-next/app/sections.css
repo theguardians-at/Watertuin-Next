@@ -1228,5 +1228,8 @@
 .wt-datenschutz-content .content ul li strong{color:var(--cd)}
 .wt-datenschutz-content .divider{border:none;border-top:1px solid var(--cbr);margin:40px 0}
 @media(max-width:900px){.wt-datenschutz-content .content{padding:40px 24px 60px}}
-/* Builder-Wrapper duerfen das Layout des Entwurfs nicht veraendern */
+/* Builder-Wrapper duerfen das Layout des Entwurfs nicht veraendern. */
+/* .builder-text ist ein <div> und wuerde sonst in einem <span class="pill"> */
+/* eine eigene Zeile aufmachen; picture wuerde Bilder eine Ebene tiefer setzen. */
 picture{display:contents}
+.builder-text{display:contents}

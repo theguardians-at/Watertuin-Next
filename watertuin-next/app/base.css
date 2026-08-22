@@ -52,6 +52,9 @@ a{text-decoration: none; color: inherit;}
     white-space: nowrap;
     transition: background 0.2s;}
 .btn-reserve:hover{background: #f5b030;}
+footer{background: var(--cd);
+    padding: 80px 60px 40px;
+    color: rgba(255,255,255,0.6);}
 .footer__grid{max-width: 1100px;
     margin: 0 auto;
     display: grid;
@@ -113,4 +116,5 @@ a{text-decoration: none; color: inherit;}
 .nav{display: none;}
 .btn-reserve{display: none !important;}
 .hamburger{display: flex !important;}
+footer{padding: 60px 24px 32px;}
 .footer__grid{grid-template-columns: 1fr 1fr; gap: 40px;}}
